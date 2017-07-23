@@ -5,6 +5,7 @@ const express = require("express");
 //import * as logger from 'morgan';
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const flightRouter_1 = require("./search/flightRouter");
 // Creates and configures an ExpressJS web server.
 class App {
@@ -18,6 +19,7 @@ class App {
     // Configure Express middleware.
     middleware() {
         //this.express.use(logger('dev'));
+        this.express.use(cors());
         this.express.use(bodyParser.json());
         this.express.use(bodyParser.urlencoded({ extended: false }));
         this.express.use(express.static('public'));
