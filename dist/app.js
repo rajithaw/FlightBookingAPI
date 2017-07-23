@@ -5,7 +5,7 @@ const express = require("express");
 //import * as logger from 'morgan';
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const flightrouter_1 = require("./search/flightrouter");
+const flightRouter_1 = require("./search/flightRouter");
 // Creates and configures an ExpressJS web server.
 class App {
     //Run configuration methods on the Express instance.
@@ -38,7 +38,7 @@ class App {
             });
         });
         this.express.use('/', router);
-        this.express.use('/api/v1/flights', flightrouter_1.default);
+        this.express.use('/api/v1/flights', flightRouter_1.default);
     }
     dbConnect() {
         let uri = 'mongodb://sa:sa@ds035674.mlab.com:35674/flight-booking';

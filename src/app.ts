@@ -4,7 +4,7 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as mongoose from 'mongoose';
 
-import FlightRouter from './search/flightrouter';
+import FlightRouter from './search/flightRouter';
 
 // Creates and configures an ExpressJS web server.
 class App {
