@@ -3,6 +3,8 @@ export interface ISearchFilter {
     returnAirportCode: string;
     departureDate: Date;
     returnDate: Date;
-    pageIndex: number;
-    pageSize: number;
+    pageIndex?: number;
+    pageSize?: number;
+    sortBy?: string;
+    sortOrder?: number;
 }

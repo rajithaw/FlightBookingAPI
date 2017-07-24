@@ -4,14 +4,21 @@ import {IFlightSearchResult} from '../models/flightSearchResult';
 
 export class FlightSearchService {
     Search (filter: ISearchFilter, callback: (err: any, result: IFlightSearchResult) => void) {
-        debugger;
         let query = Flight.find();
 
-        if (filter.pageIndex && filter.pageSize) {
+        if (filter.sortBy) {
+            let sortOrder = filter.sortOrder < 0 ? -1 : 1;
+            let sortOptions = {};
+            sortOptions[filter.sortBy] = sortOrder;
+
+            query.sort(sortOptions);
+        }
+        
+        if (filter.pageIndex >= 0 && filter.pageSize >= 0) {
             let skip = filter.pageIndex * filter.pageSize;
             let limit = filter.pageSize;
 
-            query = Flight.find().skip(skip).limit(limit);
+            query = query.skip(skip).limit(limit);
         }
         
         query.exec((err, result) => {

@@ -14,14 +14,15 @@ class FlightRouter {
      * GET flights matching the given criteria.
      */
     getFlights(req, res, next) {
-        debugger;
         flightController_1.default.List({
             departureAirportCode: req.query.departureAirportCode,
             returnAirportCode: req.query.returnAirportCode,
             departureDate: req.query.departureDate,
             returnDate: req.query.departureAirportCode,
             pageIndex: +req.query.pageIndex,
-            pageSize: +req.query.pageSize
+            pageSize: +req.query.pageSize,
+            sortBy: req.query.sortBy,
+            sortOrder: +req.query.sortOrder
         }, (err, result) => {
             if (err) {
                 console.log(err);
