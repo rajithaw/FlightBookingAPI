@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc -p src/",
+    "build:watch": "tsc -p src/ -w",
     "start": "node dist/index.js",
     "test": "mocha --reporter spec --compilers ts:ts-node/register --timeout 15000"
   },
