@@ -1,6 +1,4 @@
-//import * as path from 'path';
 import * as express from 'express';
-//import * as logger from 'morgan';
 import * as bodyParser from 'body-parser';
 import * as mongoose from 'mongoose';
 import * as cors from 'cors';
@@ -9,10 +7,10 @@ import FlightRouter from './search/flightRouter';
 // Creates and configures an ExpressJS web server.
 class App {
 
-  // ref to Express instance
+    // ref to Express instance
     public express: express.Application;
 
-    //Run configuration methods on the Express instance.
+    // Run configuration methods on the Express instance.
     constructor() {
         this.express = express();
         this.middleware();
@@ -22,7 +20,6 @@ class App {
 
     // Configure Express middleware.
     private middleware(): void {
-        //this.express.use(logger('dev'));
         this.express.use(cors())
         this.express.use(bodyParser.json());
         this.express.use(bodyParser.urlencoded({ extended: false }));
@@ -57,8 +54,7 @@ class App {
             if (err) {
                 console.log(err.message);
                 console.log(err);
-            }
-            else {
+            } else {
                 console.log('Connected to MongoDb');
             }
         });

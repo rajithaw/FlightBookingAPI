@@ -13,14 +13,14 @@ export class FlightSearchService {
 
             query.sort(sortOptions);
         }
-        
+
         if (filter.pageIndex >= 0 && filter.pageSize >= 0) {
             let skip = filter.pageIndex * filter.pageSize;
             let limit = filter.pageSize;
 
             query = query.skip(skip).limit(limit);
         }
-        
+
         query.exec((err, result) => {
             if (err) {
                 console.log(err);

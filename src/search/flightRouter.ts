@@ -48,8 +48,4 @@ export class FlightRouter {
 }
 
 // Create the Router, and export its configured Express.Router
-//const flightRoutes = new FlightRouter();
-//flightRoutes.init();
-
 export default new FlightRouter().router;
-//export default flightRoutes;

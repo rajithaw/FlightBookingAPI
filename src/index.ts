@@ -1,9 +1,6 @@
 import * as http from 'http';
-//import * as debug from 'debug';
 
 import App from './app';
-
-//debug('ts-express:server');
 
 const port = normalizePort(process.env.PORT || 3005);
 App.set('port', port);
@@ -14,16 +11,23 @@ server.on('error', onError);
 server.on('listening', onListening);
 
 function normalizePort(val: number|string): number|string|boolean {
-    let port: number = (typeof val === 'string') ? parseInt(val, 10) : val;
-    if (isNaN(port)) return val;
-    else if (port >= 0) return port;
-    else return false;
+    let prt: number = (typeof val === 'string') ? parseInt(val, 10) : val;
+    if (isNaN(prt)) {
+        return val;
+    } else if (prt >= 0) {
+        return prt;
+    } else {
+        return false;
+    }
 }
 
 function onError(error: NodeJS.ErrnoException): void {
-    if (error.syscall !== 'listen') throw error;
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+
     let bind = (typeof port === 'string') ? 'Pipe ' + port : 'Port ' + port;
-    switch(error.code) {
+    switch (error.code) {
         case 'EACCES':
             console.error(`${bind} requires elevated privileges`);
             process.exit(1);
@@ -40,6 +44,5 @@ function onError(error: NodeJS.ErrnoException): void {
 function onListening(): void {
     let addr = server.address();
     let bind = (typeof addr === 'string') ? `pipe ${addr}` : `port ${addr.port}`;
-    //debug(`Listening on ${bind}`);
     console.log(`Listening on ${bind}`);
 }

@@ -1,5 +1,6 @@
 const gulp = require('gulp');
 const ts = require('gulp-typescript');
+const tslint = require('gulp-tslint');
 const JSON_FILES = ['src/*.json', 'src/**/*.json'];
 
 // pull in the project TypeScript config
@@ -21,3 +22,11 @@ gulp.task('assets', function() {
 });
 
 gulp.task('default', ['watch', 'assets']);
+
+gulp.task('lint', function() {
+    return gulp.src('src/**/*.ts')
+        .pipe(tslint({
+            formatter: "prose"
+        }))
+        .pipe(tslint.report());
+})
