@@ -47,14 +47,20 @@
     "cors": "^2.8.4",
     "express": "^4.16.2",
     "mongoose": "^4.13.9",
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-mocha": "^4.3.1",
     "gulp-sourcemaps": "^2.6.3",
     "gulp-tslint": "^8.1.2",
     "gulp-typescript": "^3.2.3",
     "json-loader": "^0.5.7",
+    "mocha": "^3.5.3",
     "ts-loader": "^2.3.7",
-    "webpack-stream": "^3.2.0",
-    "del": "^3.0.0"
+    "ts-node": "^3.3.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.6.2",
+    "webpack-stream": "^3.2.0"
   }
 }
