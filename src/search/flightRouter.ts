@@ -4,7 +4,7 @@ import FlightCtrl from './controllers/flightController';
 import {IFlightSearchResult} from './models/flightSearchResult';
 
 export class FlightRouter {
-    router: Router
+    router: Router;
 
     /**
      * Initialize the Router
@@ -34,7 +34,7 @@ export class FlightRouter {
             }
 
             res.send(result);
-        })
+        });
     }
 
     /**

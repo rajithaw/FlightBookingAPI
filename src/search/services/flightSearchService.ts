@@ -31,9 +31,10 @@ export class FlightSearchService {
             let searchResult: IFlightSearchResult = {
                 TotalCount: 370,
                 ItineraryPage: result
-            }
+            };
+
             callback(null, searchResult);
-        })
+        });
     }
 }
 

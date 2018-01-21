@@ -9,6 +9,7 @@
     "build:watch": "tsc -p src/ -w",
     "start": "node dist/prod/flightBookingApi.js",
     "start:dev": "node dist/dev/index.js",
+    "lint": "tslint ./src/**/*.ts ./test/**/*.test.ts",
     "test": "mocha --reporter spec --compilers ts:ts-node/register --timeout 15000",
     "postinstall": "npm run build:prod"
   },
